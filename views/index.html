@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Text Page</title>
+	</head>
+	<body>
+		<h1>Quick Maths</h1>
+		<div class="outliers">
+			<h2 class="title">Outliers</h2>
+			<form hx-post="/api/outliers" hx-swap="innerHTML" hx-target="#results">
+				<div class="container">
+					<fieldset>
+						<legend>Control</legend>
+						<div class="formInput">
+							<div class="input">
+								<label>Average</label>
+								<input type="text" name="cavg" />
+							</div>
+							<div class="input">
+								<label>Standard Deviation</label>
+								<input type="text" name="cSD" />
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Variation</legend>
+						<div class="formInput">
+							<div class="input">
+								<label>Average</label>
+								<input type="text" name="vavg" />
+							</div>
+							<div class="input">
+								<label>Standard Deviation</label>
+								<input type="text" name="vSD" />
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<button>Submit</button>
+			</form>
+			<div id="results">
+				<div>Average {{.Avg}}</div>
+				<div>Variation {{ .Vari}}</div>
+			</div>
+		</div>
+	</body>
+</html>
