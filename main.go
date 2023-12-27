@@ -24,7 +24,7 @@ func main() {
 })
 
 app.Post("/api/outliers", func(c *fiber.Ctx) error {
-		max, avg ,sd := outliers(c)
+		max, avg , sd := outliers(c)
 
 		return c.Render("partials/outliers", fiber.Map{
 			"Avg": fmt.Sprintf("%.2f", avg) ,
